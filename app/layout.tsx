@@ -10,6 +10,11 @@ const fontSans = FontSans({
   fallback: ["system-ui", "sans-serif"],
 });
 
+export const metadata = {
+  title: "LiveDocs",
+  description: "Your go-to collaborative editor.",
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -19,7 +24,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased", fontSans.variable
+          "min-h-screen font-sans antialiased", fontSans.variable
         )}
       >
         {children}
