@@ -1,10 +1,13 @@
+@config "./../tailwind.config.ts"; 
 @import "tailwindcss";
+
 
 /* @import "@liveblocks/react-ui/styles.css"; */
 /* @import "@liveblocks/react-lexical/styles.css"; */
 
 /* @import "../styles/dark-theme.css"; */
 
+/* ========================================== TAILWIND STYLES */
 /* ========================================== TAILWIND STYLES */
 @layer base {
   :root {
@@ -35,29 +38,21 @@
 
 @layer utilities {
   .text-28-semibold {
-    @apply text-[28px];
-    font-weight: 600;
+    @apply text-[28px] font-semibold;
   }
   .text-10-regular {
-    @apply text-[10px];
-    font-weight: 400;
+    @apply text-[10px] font-normal;
   }
 
   .gradient-blue {
-    background-image: linear-gradient(to top, #3371FF, #417BFF);
+    @apply bg-gradient-to-t from-blue-500 to-blue-400;
   }
   .gradient-red {
-    background-image: linear-gradient(to top, #DC4349, #DD4F56);
+    @apply bg-gradient-to-t from-red-500 to-red-400;
   }
 
   .shad-dialog {
-    @apply !w-full !max-w-[400px] rounded-xl border-none bg-cover px-5 py-7 shadow-xl;
-  }
-  
-  @media (min-width: 640px) {
-    .shad-dialog {
-      min-width: 500px;
-    }
+    @apply w-full max-w-[400px] rounded-xl border-none bg-doc bg-cover px-5 py-7 shadow-xl sm:min-w-[500px];
   }
 
   .shad-dialog button {
@@ -73,15 +68,15 @@
   }
 
   .shad-select-item {
-    @apply cursor-pointer text-blue-100 focus:text-blue-100;
+    @apply cursor-pointer bg-dark-200 text-blue-100 focus:bg-dark-300 hover:bg-dark-300 focus:text-blue-100;
   }
 
   .shad-popover {
-    @apply !w-[460px] border-none shadow-lg;
+    @apply !w-[460px] border-none bg-dark-200 shadow-lg;
   }
 
   .floating-toolbar {
-    @apply flex w-full min-w-max items-center justify-center gap-2 rounded-lg p-1.5 shadow-xl;
+    @apply flex w-full min-w-max items-center justify-center gap-2 rounded-lg bg-dark-350 p-1.5 shadow-xl;
   }
 
   .floating-toolbar-btn {
@@ -89,7 +84,7 @@
   }
 
   .toolbar-wrapper {
-    @apply z-50 w-screen overflow-auto border-y pl-3 pr-4 shadow-sm;
+    @apply z-50 w-screen overflow-auto border-y border-dark-300 bg-dark-100 pl-3 pr-4 shadow-sm;
   }
 
   .editor-wrapper {
@@ -97,7 +92,7 @@
   }
 
   .header {
-    @apply min-h-[92px] min-w-full flex-nowrap flex w-full items-center justify-between gap-2 px-4;
+    @apply min-h-[92px] min-w-full flex-nowrap bg-dark-100 flex w-full items-center justify-between gap-2 px-4;
   }
 
   .document-list-container {
@@ -109,11 +104,11 @@
   }
 
   .document-list-item {
-    @apply flex items-center justify-between gap-4 rounded-lg bg-cover p-5 shadow-xl;
+    @apply flex items-center justify-between gap-4 rounded-lg bg-doc bg-cover p-5 shadow-xl;
   }
 
   .document-list-empty {
-    @apply flex w-full max-w-[730px] flex-col items-center justify-center gap-5 rounded-lg px-10 py-8;
+    @apply flex w-full max-w-[730px] flex-col items-center justify-center gap-5 rounded-lg bg-dark-200 px-10 py-8;
   }
 
   .document-title-input {
@@ -121,11 +116,11 @@
   }
 
   .document-title {
-    @apply line-clamp-1 text-base font-semibold leading-[24px] sm:pl-0 sm:text-xl;
+    @apply line-clamp-1 border-dark-400 text-base font-semibold leading-[24px] sm:pl-0 sm:text-xl;
   }
 
   .view-only-tag {
-    @apply rounded-md px-2 py-0.5 text-xs text-blue-100/50;
+    @apply rounded-md bg-dark-400/50 px-2 py-0.5 text-xs text-blue-100/50;
   }
 
   .collaborators-list {
@@ -133,7 +128,7 @@
   }
 
   .share-input {
-    @apply !h-11 !flex-1 border-none focus-visible:ring-0 focus-visible:ring-offset-0;
+    @apply !h-11 flex-1 border-none bg-dark-400 focus-visible:ring-0 focus-visible:ring-offset-0;
   }
 
   .remove-btn {
@@ -145,11 +140,11 @@
   }
 
   .comment-composer {
-    @apply w-full max-w-[800px] border shadow-sm lg:w-[350px];
+    @apply w-full max-w-[800px] border border-dark-300 bg-dark-200 shadow-sm lg:w-[350px];
   }
 
   .comment-thread {
-    @apply w-full max-w-[800px] border shadow-sm lg:w-[350px] transition-all;
+    @apply w-full max-w-[800px] border border-dark-300 bg-dark-200 shadow-sm lg:w-[350px] transition-all;
   }
 
   .loader {
