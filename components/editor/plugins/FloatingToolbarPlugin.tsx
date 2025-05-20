@@ -246,6 +246,7 @@ import {
       range.setStart(anchorDOM, anchorOffset);
       range.setEnd(focusDOM, focusOffset);
     } catch (e) {
+      console.error('An error occurred:', e);
       return null;
     }
   
