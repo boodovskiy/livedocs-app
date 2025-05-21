@@ -1,6 +1,4 @@
 'use client';
-import { useSelf } from '@liveblocks/react/suspense';
-import React, { useState } from 'react'
 import {
     Dialog,
     DialogContent,
@@ -8,14 +6,16 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-  } from "@/components/ui/dialog"
-import { Button } from './ui/button';
-import Image from 'next/image';
-import { Label } from './ui/label';
-import { Input } from './ui/input';
-import UserTypeSelector from './UserTypeSelector';
-import Collaborator from './Collaborator';
+} from "@/components/ui/dialog";
 import { updateDocumentAccess } from '@/lib/actions/room.actions';
+import { useSelf } from '@liveblocks/react/suspense';
+import Image from 'next/image';
+import { useState } from 'react';
+import Collaborator from './Collaborator';
+import { Button } from './ui/button';
+import { Input } from './ui/input';
+import { Label } from './ui/label';
+import UserTypeSelector from './UserTypeSelector';
   
 
 const ShareModal = ({ roomId, collaborators, creatorId, currentUserType } : ShareDocumentDialogProps) => {
